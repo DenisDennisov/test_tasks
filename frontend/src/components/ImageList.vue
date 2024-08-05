@@ -22,7 +22,10 @@ export default {
     async fetchImages() {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/projectimages/');
-        this.images = response.data;
+        this.images = response.data.map(image => ({
+          ...image,
+          image: image.image
+        }));
       } catch (error) {
         console.error(error);
       }

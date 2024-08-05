@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'projectimages',
     'corsheaders',
+    'drf_extra_fields',
 ]
 
 MIDDLEWARE = [

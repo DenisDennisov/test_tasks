@@ -33,20 +33,33 @@ export default {
   },
   methods: {
     onFileChange(event) {
-      this.image = event.target.files[0];
-      this.selectedFileName = this.image ? this.image.name : null;
+      const file = event.target.files[0];
+      this.selectedFileName = file ? file.name : null;
+
+      if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.image = reader.result;
+        };
+      }
     },
     removeSelectedFile() {
       this.image = null;
       this.selectedFileName = null;
     },
     async uploadImage() {
-      let formData = new FormData();
-      formData.append('image', this.image);
-      formData.append('description', this.description);
+      const payload = {
+        image: this.image,
+        description: this.description
+      };
 
       try {
-        await axios.post('http://127.0.0.1:8000/api/projectimages/', formData);
+        await axios.post('http://127.0.0.1:8000/api/projectimages/', payload, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
         this.$emit('imageUploaded');
         this.image = null;
         this.description = '';
