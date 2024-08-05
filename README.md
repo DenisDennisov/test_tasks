@@ -22,13 +22,13 @@ or...
    python3 -m venv venv
    source venv/bin/activate
 
-3. Install requirements.
-   ```sh
-   pip install -r requirements.txt
-
-4. Go to backend folder.
+3. Go to backend folder.
    ```sh
    cd backend/simpleproject
+
+4. Install requirements.
+   ```sh
+   pip install -r requirements.txt
 
 5. Use migrate and start backend.
    ```sh
