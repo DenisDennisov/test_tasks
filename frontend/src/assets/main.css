@@ -1,0 +1,15 @@
+@import './base.css';
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,13,101,1) 35%, rgba(7,167,200,1) 100%);
+  background: rgb(26,26,37);
+  background: linear-gradient(90deg, rgba(26,26,37,1) 0%, rgba(12,12,18,1) 35%, rgba(50,50,50,1) 100%);
+  background: rgb(40,50,99);
+background: linear-gradient(90deg, rgba(40,50,99,1) 0%, rgba(33,29,52,1) 37%, rgba(49,32,68,1) 100%);
+  justify-content: center;
+  align-items: center;
+}
